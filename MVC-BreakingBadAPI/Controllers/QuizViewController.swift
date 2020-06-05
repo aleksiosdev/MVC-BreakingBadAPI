@@ -62,7 +62,7 @@ class QuizView: UIView {
 
     lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Win a quiz game or get a spoiler!"
+        label.text = "Win a quiz game or get a spoiler! \nP.S. Black lives matter!"
         label.textColor = .white
         return label
     }()
@@ -103,8 +103,18 @@ final class QuizViewController: UIViewController {
 		stepView.titleLabel.text = quizStep.question
 		stepView.answerTwoButton.setTitle(quizStep.variants.first, for: .normal)
 		stepView.answerFirstbutton.setTitle(quizStep.variants[1], for: .normal)
+        stepView.answerTwoButton.addTarget(self, action: #selector(buttonSecondTapped), for: .touchUpInside)
+        stepView.answerFirstbutton.addTarget(self, action: #selector(buttonFirstTapped), for: .touchUpInside)
         self.view = stepView
 
+    }
+
+    @objc private func buttonFirstTapped() {
+        presentAlert(title: "You chose First answer", message: "You was maybe right", buttonTitle: "Donate us!")
+    }
+
+    @objc private func buttonSecondTapped() {
+        presentAlert(title: "You chose Second answer", message: "You was maybe right", buttonTitle: "Oh no")
     }
 
     class StepView : UIView {
@@ -134,7 +144,7 @@ final class QuizViewController: UIViewController {
             let label = UILabel()
 			label.font = UIFont.boldSystemFont(ofSize: 24)
             label.textColor = .white
-			label = .center
+            label.textAlignment = .center
             return label
         }()
 
