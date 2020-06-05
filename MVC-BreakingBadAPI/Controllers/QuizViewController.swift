@@ -114,7 +114,7 @@ final class QuizViewController: UIViewController {
     }
 
     @objc private func buttonSecondTapped() {
-        presentAlert(title: "You chose Second answer", message: "You was maybe right", buttonTitle: "Oh no")
+        presentAlert(title: "You chose 2nd answer", message: "You was maybe right", buttonTitle: "Oh no")
     }
 
     class StepView : UIView {
