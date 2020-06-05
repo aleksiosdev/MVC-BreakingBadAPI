@@ -49,12 +49,14 @@ class QuizView: UIView {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Win a quiz game or get a spoiler!"
+        label.textColor = .white
         return label
     }()
 
     lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
 
@@ -84,6 +86,57 @@ final class QuizViewController: UIViewController {
 
 
     override func loadView() {
-        self.view = QuizView()
+        let quizView = QuizView()
+        quizView.button.addTarget(self, action: #selector(onStart), for: .touchUpInside)
+        self.view = quizView
+    }
+
+    @objc private func onStart() {
+        let stepView = StepView()
+        self.view = stepView
+    }
+
+    class StepView : UIView {
+        lazy var mainStackView: UIStackView = {
+            let stackView = UIStackView()
+            stackView.axis = .horizontal
+            stackView.translatesAutoresizingMaskIntoConstraints = false
+            return stackView
+        }()
+
+        lazy var scoreStackView: UIStackView = {
+            let stackView = UIStackView()
+            stackView.axis = .horizontal
+            stackView.translatesAutoresizingMaskIntoConstraints = false
+            return stackView
+        }()
+
+        lazy var answersStackView: UIStackView = {
+            let stackView = UIStackView()
+            stackView.axis = .vertical
+            stackView.translatesAutoresizingMaskIntoConstraints = false
+            return stackView
+        }()
+
+        lazy var titleLabel: UILabel = {
+            let label = UILabel()
+//            label.text = "Win a quiz game or get a spoiler!"
+            label.textColor = .white
+            return label
+        }()
+
+        override init(frame: CGRect) {
+            super.init(frame: frame)
+            self.addSubview(mainStackView)
+            self.mainStackView.addSubview(self.scoreStackView)
+            self.mainStackView.addSubview(self.titleLabel)
+            self.mainStackView.addSubview(self.answersStackView)
+            mainStackView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+            mainStackView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        }
+
+        required init?(coder: NSCoder) {
+            nil
+        }
     }
 }
