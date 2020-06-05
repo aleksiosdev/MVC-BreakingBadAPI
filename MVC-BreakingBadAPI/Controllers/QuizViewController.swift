@@ -38,6 +38,40 @@ class StepsModel {
 	}
 }
 
+class QuizView: UIView {
+    lazy var button: UIButton = {
+        let button = UIButton()
+        button.setTitle("Start", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+
+    lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Win a quiz game or get a spoiler!"
+        return label
+    }()
+
+    lazy var stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        return stackView
+    }()
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        addSubview(stackView)
+        stackView.addArrangedSubview(titleLabel)
+        stackView.addArrangedSubview(button)
+        stackView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
 final class QuizViewController: UIViewController {
 
 	func showStartState() {
@@ -47,4 +81,9 @@ final class QuizViewController: UIViewController {
 	func showQuiz() {
 
 	}
+
+
+    override func loadView() {
+        self.view = QuizView()
+    }
 }
