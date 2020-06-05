@@ -44,6 +44,7 @@
 		CAE34EEE2475890200DEAB16 /* CharactersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE34EED2475890200DEAB16 /* CharactersView.swift */; };
 		CAE34EF02476B90C00DEAB16 /* CharacterInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE34EEF2476B90C00DEAB16 /* CharacterInfoView.swift */; };
 		CAE34EF22476CDBC00DEAB16 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE34EF12476CDBC00DEAB16 /* FavoritesView.swift */; };
+		E22924F5248AA49A00DD9E29 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22924F4248AA49A00DD9E29 /* QuizViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +88,7 @@
 		CAE34EED2475890200DEAB16 /* CharactersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersView.swift; sourceTree = "<group>"; };
 		CAE34EEF2476B90C00DEAB16 /* CharacterInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterInfoView.swift; sourceTree = "<group>"; };
 		CAE34EF12476CDBC00DEAB16 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		E22924F4248AA49A00DD9E29 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		EDBD021B720ACA055AD84253 /* Pods-MVC-BreakingBadAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVC-BreakingBadAPI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MVC-BreakingBadAPI/Pods-MVC-BreakingBadAPI.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -182,6 +184,7 @@
 		CA91CCBE244DE88A00B3AB30 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E22924F4248AA49A00DD9E29 /* QuizViewController.swift */,
 				CA91CCC1244DEBA900B3AB30 /* SearchVC.swift */,
 				CA91CCC3244DEBDD00B3AB30 /* CharacterInfoVC.swift */,
 				CA91CCD6244F25C900B3AB30 /* CharactersVC.swift */,
@@ -375,6 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAE34EF02476B90C00DEAB16 /* CharacterInfoView.swift in Sources */,
+				E22924F5248AA49A00DD9E29 /* QuizViewController.swift in Sources */,
 				CA91CCC6244DEC0300B3AB30 /* FavoritesVC.swift in Sources */,
 				CA91CCF1245973D500B3AB30 /* BBEmptyStateView.swift in Sources */,
 				CA91CCCD244DF4FF00B3AB30 /* UITextField+Ext.swift in Sources */,
